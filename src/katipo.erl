@@ -196,13 +196,12 @@
 -type req_body() :: iodata() | qs_vals().
 -type body() :: binary().
 -type request() :: map().
-%% {ok, #{status => status(),
-%%        headers => headers(),
-%%        cookiejar => cookiejar(),
-%%        body => body()}}
-%% {error, #{code => error_code(),
-%%           message => error_msg()}}
--type response() :: {ok, map()} | {error, map()}.
+-type response() :: {ok, #{status := status(),
+                           headers := headers(),
+                           cookiejar := cookiejar(),
+                           body := body()}} |
+                    {error, #{code := error_code(),
+                              message := error_msg()}}.
 -type http_auth() :: basic | digest.
 -type http_auth_int() :: ?CURLAUTH_BASIC | ?CURLAUTH_DIGEST.
 -type curlmopts() :: [{max_pipeline_length, non_neg_integer()} | {pipelining, boolean()}].

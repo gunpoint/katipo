@@ -7,7 +7,7 @@
    [kernel,
     stdlib,
     cowlib,
-    gproc,
+    worker_pool,
     metrics
    ]},
   {env, [{mod_metrics, dummy}]},
